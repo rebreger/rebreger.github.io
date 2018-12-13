@@ -1,0 +1,109 @@
+/* FOOTER, INCLUDING BOTTOM NAVIGATION */
+footer {
+    width: 100%;
+     background-image: linear-gradient(to right,#cc5b5b,#5e0303,#5e0303,#cc5b5b);
+}
+footer nav.footer-nav {
+    max-width: 1000px;
+    margin:  auto;
+    min-height: 40px;
+    line-height: 40px;
+    column-count: 3;
+    column-width: 33%;
+    column-span: all;
+    
+}
+footer nav.footer-nav ul {
+    width: 100%;
+    text-align: center ;
+    list-style-type: none;
+}
+footer nav.footer-nav ul li {
+    
+}
+footer nav.footer-nav ul li a {
+    padding: 0 0.5em;
+    font-size: 0.9em;
+}
+footer div#campus-addresses-container {
+    width: 700px;
+    max-width: 100%;
+    min-height: 190px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+footer div#campus-addresses-container p.campus-name {
+    font-weight: bold;
+    font-size: 120%; /* 1.2em */
+}
+footer div#campus-addresses-grid {
+    width: 100%;
+    display: grid;
+    grid-template: 130px / 30% 30% 30%;
+    grid-gap: 0 5%; /* 30% + 5% + 30% + 5% + 30% */
+}
+footer div.address-item {
+    text-align: left;
+    font-size: 0.7em;
+}
+footer div.address-item ul {
+    padding-left: 18px;
+}
+footer div#social-media-links ul {
+    text-align: center; /* applies centering to the social media icons */
+}
+footer div#social-media-links ul li {
+    display: inline;
+}
+footer div#social-media-links ul li a span {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+footer div#social-media-links ul li a span#facebook-icon {
+    background-image: url('../images/facebook-logo.png');
+}
+footer div#social-media-links ul li a span#twitter-icon {
+    background-image: url('../images/twitter-logo.png');
+}
+footer div#social-media-links ul li a span#instagram-icon {
+    background-image: url('../images/instagram-logo.png');
+}
+footer div#social-media-links ul li a span#linkedin-icon {
+    background-image: url('../images/linkedin-logo.png');
+}
+footer div#social-media-links ul li a span#vimeo-icon {
+    background-image: url('../images/vimeo-logo.png');
+}
+footer div#social-media-links ul li a span#youtube-icon {
+    background-image: url('../images/youtube-logo.png');
+}
+
+footer p.copyright-legal {
+    width: 988px;
+    max-width: 100%;
+    margin: 1em auto;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+/* Changes for adding RWD to the footer navigation menu items */
+@media only screen and (max-width: 480px) {
+    footer nav.footer-nav ul li {
+        display: block; /* each navigation item is now on its own line */
+    }
+}
+
+/* Changes for adding RWD to the Campus Addresses grid layout */
+@media only screen and (max-width: 600px) {
+    footer div#campus-addresses-grid {
+        width: 60%;
+        margin: 10px auto;
+        grid-template: 100px 90px 100px / 100%; /* 3 rows, 1 column */
+        grid-gap: 10px 0; /* 10px gap between rows, no gap needed for one column */
+    }
+    div.address-item{
+        display: none;
+    }
+}
