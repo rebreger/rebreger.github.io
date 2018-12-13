@@ -1,0 +1,165 @@
+/* MAIN SECTION */
+div#main-container {
+    width: 100%;
+    background-image:linear-gradient(#132858, #335a90);
+    background-image: linear-gradient(to right, #7896db,#132858,#132858,#7896db); 
+/*    335a90       132858*/
+}
+main div#main-image {
+    width: 988px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 517px;
+    background-image: url('../images/banner-1.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* for RWD (Responsive Web Design) */
+@media only screen and (max-width: 988px) {
+    main div#main-image {
+        height: 0;
+        max-height: 517px;
+        padding-bottom: 52.33%; /* 517 / 988 = 52.33% */
+                                /* This is a bit of a trick to ensure that
+                                   the #main-image div height remains proportional
+                                   to the div's width */
+        /* background-image: none;
+        background-color: fuchsia; */
+    }
+}
+
+/* SECTION - CAMPUS BUTTONS FOR HOMEPAGE */
+section#campus-buttons {
+    width: 100%;
+    max-width: 988px;
+    margin: 20px auto;
+}
+section#campus-buttons p {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+div.campus {
+    min-width: 100px;
+    width: 325px;
+    height: 120px;
+    margin: 0 auto;
+    color: transparent;
+}
+div#bluffton-campus-button {
+    background-image: url('../images/bluffton-campus.png');
+}
+div#beaufort-campus-button {
+    background-image: url('../images/beaufort-campus.png');
+}
+div#hiltonheadisland-campus-button {
+    background-image: url('../images/hiltonheadisland-campus.png');
+}
+
+/* See Ch. 9 for details on Flexible Box Layout */
+.flex-container {
+    display: flex; /* specifies the use of Flexible Box Layout and that
+                      the flexbox container is treated as a block element;
+                      for more info, see pp. 326-327 in your book */
+    flex-wrap: wrap; /* use this to ensure that when the browser window width
+                        is reduced, items wrap to the next line or lines as needed */
+    align-content: center; /* specifies how lines of flex items are aligned
+                              within the flex container; we are doing this so that
+                              any items that are "soft-wrapped" to the next line
+                              after reducing the browser window width will be
+                              aligned in the center of the container */
+    width: 100%;
+    margin: 0 auto;
+}
+.flex-container > div {
+/*    background-color: fuchsia;*/
+    flex-basis: 300px; /* this indicates the initial width of the flex item;
+                          this value was chosen in order to be just slightly
+                          wider than the image contained within the flex item
+                          (see pp. 334-335 for more info) */
+    flex-grow: 1; /* this means that if an item needs to "grow" (in width)
+                     as a result of being wrapped, then any wrapped items will
+                     grow by up to an additional 1X (100%) in width relative
+                     to their original size */
+    margin-top: 5px;
+}
+
+/* SECTION - NEWS AND EVENTS */
+section#news-events {
+    width: 100%;
+    padding-top: 10px;
+    margin: 0 auto;
+/*    background-image: linear-gradient(to right, #132858,#7896db,#132858);*/
+}
+section#news-events h3 {
+    font-size: 1em;
+    border-bottom: 1px solid white;
+}
+section#news-events p {
+    font-size: 0.8em;
+}
+section#news-events a {
+    color: #82b3cd;
+    font-weight: bold;
+    text-decoration: underline;
+}
+section#news-events a:hover, section#news-events a:focus {
+    text-decoration: none;
+}
+
+div#news-events-grid {
+    width: 90%;
+    margin: 0 auto;
+    display: grid; /* see Ch. 10 in your book for more details */
+    grid-template: 360px / 49% 49%; /* refer to p. 355 in your book */
+    grid-gap: 0 2%; /* one row, so gap needed between rows,
+                       2% gap between the two columns (49% + 2% + 49% = 100%)*/
+}
+div#news-block, div#events-block {
+    display: grid;
+    grid-template: 30px 100px 100px 100px / 100%; /* 4 rows, 1 column */
+    grid-gap: 10px 0; /* 10px row gap, only one column so no need for column gap */
+}
+div.news-item div {
+    width: 133px;
+    height: 74px;
+    float: left; /* no need for clear because of how we are using grid layout */
+    margin-right: 10px;
+}
+
+.bx-wrapper{
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    width: 988px;
+    border:none !important;
+    
+}
+
+div.news-item div#news-item-image-1 {
+    background-image:url('../images/news-thumb-1.jpg');
+}
+div.news-item div#news-item-image-2 {
+    background-image:url('../images/news-thumb-2.jpg');
+}
+div.news-item div#news-item-image-3 {
+    background-image:url('../images/news-thumb-3.jpg');
+}
+div.events-item {
+    border-bottom: 1px solid white;
+}
+div.last-event-item {
+    border: none;
+}
+
+@media only screen and (max-width: 940px) {
+    section#news-events {
+        width: 100%;
+    }
+    div#news-events-grid {
+        grid-template: 360px 360px / 100%;
+        grid-gap: 10px 0; /* 10px between rows */
+    }
+}
